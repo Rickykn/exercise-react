@@ -11,7 +11,7 @@ const CounterPage = () => {
 
   const inputHandler = (event) => {
     const { value } = event.target;
-    console.log(value);
+
     setInputValue(value);
   };
 
@@ -27,7 +27,7 @@ const CounterPage = () => {
     } else if (type === "setvalue") {
       dispatch({
         type: "SET_VALUE",
-        value: inputValue,
+        value: inputValue ? inputValue : 0,
       });
     } else if (type === "resetvalue") {
       dispatch({
